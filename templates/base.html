@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}AQUAÉ{% endblock %}</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body><aside class="sidebar"><a class="brand" href="{{ url_for('dashboard') }}">AQUAÉ<span> AQUARIUM STUDIO</span></a>
+<div class="nav-label">WORKSPACE</div><a href="{{ url_for('dashboard') }}">Overview</a><a href="{{ url_for('products') }}">Products</a><a href="{{ url_for('customers') }}">Customers</a><a href="{{ url_for('orders') }}">Orders</a>
+<div class="side-note">Curated aquatic living<br><small>Management Console · IT234</small></div></aside>
+<main class="main"><header class="topbar"><span> AQUARIUM SHOP MANAGEMENT</span><span class="admin">ADMINISTRATOR</span></header>
+{% with messages = get_flashed_messages(with_categories=true) %}{% if messages %}{% for category,message in messages %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}{% endif %}{% endwith %}
+{% block content %}{% endblock %}<footer>AQUAÉ · Aquarium Shop Management System</footer></main></body></html>
